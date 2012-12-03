@@ -1,0 +1,5 @@
+module FbPagesfetcher::Config
+
+  FB_TOKEN = 'AAADFZAIL8xY8BAFtO6cZAdUwhAu4WjEfZBHUpEbRXTvFTjs84ZBxEZAjNRpmsUnM8owzTw0f7d1t8JgVAbMYsFlqZCGNZB8ArQZD'
+
+end

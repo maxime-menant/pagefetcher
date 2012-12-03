@@ -1,0 +1,19 @@
+%h1
+  = image_tag @page.picture_url, :class => 'img-rounded'
+  = @page.name
+
+.feed
+  - @page.feed.each do |data|
+    .feed-bloc
+      .author
+        = data.author
+      - if data.picture_url
+        .picture
+          = image_tag data.picture_url
+      .message
+        = data.message
+      .footer
+        = time_ago_in_words(data.created_at)
+        agp
+
+

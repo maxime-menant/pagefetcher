@@ -1,0 +1,14 @@
+.add-form.center
+  = simple_form_for(@new_page, :html => {:class => 'form-inline' }) do |f|
+    = f.input  :fb_id, :as => :string, :placeholder => 'Enter the page ID', :label => false
+    = f.button :submit, t('.add_page')
+
+.pages-list
+  %ul
+    - Page.all.each do |page|
+      %li
+        .picture
+          = link_to(page) do
+            = image_tag page.picture_url, :class => 'img-rounded'
+        .name
+          = link_to(page.name, page)
