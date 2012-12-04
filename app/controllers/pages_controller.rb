@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def index
     @new_page = Page.new
+    @pages    = Page.all
   end
 
   def show

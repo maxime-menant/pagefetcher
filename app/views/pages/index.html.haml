@@ -5,7 +5,7 @@
 
 .pages-list
   %ul
-    - Page.all.each do |page|
+    - @pages.each do |page|
       %li
         .picture
           = link_to(page) do
