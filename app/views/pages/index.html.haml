@@ -1,6 +1,6 @@
-.add-form.center
+.add-form
   = simple_form_for(@new_page, :html => {:class => 'form-inline' }) do |f|
-    = f.input  :fb_id, :as => :string, :placeholder => 'Enter the page ID', :label => false
+    = f.input  :fb_id, :as => :string, :placeholder => 'Enter the page ID (ex: 188091757763)', :label => false
     = f.button :submit, t('.add_page')
 
 .pages-list

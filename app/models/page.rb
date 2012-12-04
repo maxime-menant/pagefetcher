@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
 
   attr_accessible :fb_id
-  validate        :fb_id, :presence => true, :uniqueness => true
+  validates       :fb_id, :presence => true, :uniqueness => true
 
   before_create   :check_page_existence
 

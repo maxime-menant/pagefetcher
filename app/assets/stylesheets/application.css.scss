@@ -12,3 +12,76 @@
  *= require_tree .
  */
 
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+
+.add-form {
+  padding-left: 10px;
+  height: 80px;
+}
+
+.add-form .controls {
+  float: left;
+  margin-right: 15px;
+}
+
+.add-form .controls input.string{
+  width: 300px;
+}
+
+
+.pages-list ul {
+  list-style-type: none;
+}
+
+.pages-list ul li {
+  height:   80px;
+  position: relative;
+}
+.pages-list ul li .name {
+  position:   absolute;
+  left:       65px;
+  top:        15px;
+  font-size:  1.5em;
+}
+
+a {
+  color: #000;
+}
+
+.feed .feed-bloc:first-child{
+  margin-top: 50px;
+}
+
+.feed-bloc {
+  position: relative;
+  width: 800px;
+  background: rgb(235, 235, 235);
+  margin: 15px auto;
+  padding: 10px;
+}
+
+.feed-bloc .author {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feed-bloc .picture {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.feed-bloc .message {
+  text-align: justify;
+}
+
+.feed-bloc .footer {
+  position: relative;
+  clear: both;
+  bottom: 0px;
+  font-size: 0.7em;
+  color: gray;
+}
