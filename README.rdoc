@@ -2,11 +2,11 @@
 
 This project was done for an interview Test.
 
-Page Fetcher save a Facebook page ID into its database, and list all the pages saved. For each page, it fetch the last 10 posts on the page's feed.
+Page Fetcher save a Facebook page ID into its database, and list all the saved pages. For each page, it fetch the last 10 posts from the page's feed.
 
 == Time
 
-This project was done in two steps, one of 3hours, and the second one of 1.5hours
+This project was done in two steps, one of 3 hours (study of the Graph API, init of the project, define the architecture), and the second one of 1.5 hours (tests, refactoring, enhancement).
 
 == Test
 
