@@ -2,8 +2,7 @@ class Page < ActiveRecord::Base
 
   attr_accessible :fb_id
   validates       :fb_id, :presence => true, :uniqueness => true
-
-  before_create   :check_page_existence
+  validate        :fb_id_existence
 
   def name
     page_data['name']
@@ -18,11 +17,7 @@ class Page < ActiveRecord::Base
   def feed
     @feed ||= begin
       data     = []
-      raw_data = fb_access.get_connections(self.fb_id, 'feed',
-      :fields => 'from,message,picture,created_time,link',
-      :limit  => '10')
-
-      raw_data.each { |rd| data << FeedData.new(rd)}
+      feed_data.each { |rd| data << FeedData.new(rd)}
       data
     rescue Koala::Facebook::ClientError => e
       raise Exception, 'Something went wrong while fetching the feed'
@@ -31,7 +26,7 @@ class Page < ActiveRecord::Base
 
   private
 
-  def check_page_existence
+  def fb_id_existence
     begin
       page_data
     rescue Koala::Facebook::ClientError => e
@@ -43,6 +38,12 @@ class Page < ActiveRecord::Base
 
   def page_data
     @page_data ||= fb_access.get_object(self.fb_id, :fields => 'id,name,picture.type(square)')
+  end
+
+  def feed_data
+    @feed_data ||= fb_access.get_connections(self.fb_id, 'feed',
+      :fields => 'from,message,picture,created_time,link',
+      :limit  => '10')
   end
 
   def fb_access

@@ -12,6 +12,9 @@ gem 'simple_form',    '~> 2.0.4'
 # Facebook API Wrapper
 gem 'koala',          '~> 1.6.0.rc1'
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.12.0"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
